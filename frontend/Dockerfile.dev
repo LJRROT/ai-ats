@@ -1,0 +1,16 @@
+# Entwicklungs-Image mit Hot Reload
+FROM node:18-alpine
+WORKDIR /app
+
+# Nur package.json & package-lock.json kopieren, um Layer-Caching zu nutzen
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Jetzt den gesamten Code kopieren
+COPY . .
+
+# Port für Next.js-Entwicklung
+EXPOSE 3000
+
+# Entwicklungsserver starten
+CMD ["npm", "run", "dev"]

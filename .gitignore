@@ -1,0 +1,18 @@
+# Node.js & Next.js
+node_modules/
+.next/
+dist/
+out/
+
+# Logs & Debugging
+npm-debug.log*
+yarn-debug.log*
+.env
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+*.pid
+*.sock
+*.db
